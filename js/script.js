@@ -17,4 +17,15 @@ function newItem() {
   }
 
   li.on("dblclick", crossOut)
+
+  const crossOutButton = $("<crossoutbutton>X</crossoutbutton>");
+  li.append(crossOutButton)
+
+  
+
+  function deleteListItem(){
+    li.addClass("delete")
+  }
+
+  crossOutButton.on("click", deleteListItem)
 }
