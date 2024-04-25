@@ -11,4 +11,10 @@ function newItem() {
     const list = $("#list");
     list.append(li);
   }
+
+  function crossOut() {
+    li.toggleClass("strike")
+  }
+
+  li.on("dblclick", crossOut)
 }
