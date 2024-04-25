@@ -1,4 +1,5 @@
 function newItem() {
+  //1. Adding a new item to the list:
   const li = $("<li></li>");
   const input = $("input");
   const inputValue = input.val();
@@ -11,21 +12,21 @@ function newItem() {
     const list = $("#list");
     list.append(li);
   }
-
+  //2. Crossing an item out:
   function crossOut() {
-    li.toggleClass("strike")
+    li.toggleClass("strike");
   }
 
-  li.on("dblclick", crossOut)
-
+  li.on("dblclick", crossOut);
+  //3. Adding a delete button
   const crossOutButton = $("<crossoutbutton>X</crossoutbutton>");
-  li.append(crossOutButton)
+  li.append(crossOutButton);
 
-  
-
-  function deleteListItem(){
-    li.addClass("delete")
+  function deleteListItem() {
+    li.addClass("delete");
   }
 
-  crossOutButton.on("click", deleteListItem)
+  crossOutButton.on("click", deleteListItem);
+
+  $('#list').sortable();
 }
